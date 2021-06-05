@@ -1,24 +1,36 @@
 .moreView {
-  margin: 16px 16px 24px;
+  /* margin: 16px 16px 24px; */
+  margin-top: 16px;
+  margin-bottom: 24px;
+  margin-left: 80px;
+  margin-right: 50px;
   padding: 16px 16px 32px;
   background-color: #ebeeef;
   border-radius: 4px;
+  width: auto;
 }
 
 .heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
   width: 100%;
 }
-.heading :first-child {
+.moreView .heading :first-child {
   font-size: 24px;
   color: #002f34;
 }
 
-.heading :last-child {
-  font-size: 14px;
+.moreView .heading :last-child {
+  font-size: 15px;
+  font-weight: 600;
   color: #002f34;
+  text-decoration: underline;
+}
+
+.heading :last-child:hover{
+  text-decoration: none;
 }
 
 .recommendations .cards {
@@ -34,9 +46,9 @@
 .card {
   margin-right: 15px;
   padding: 13px;
-  max-width: 222px;
-  width: 222px;
-  height: 270px;
+  max-width: 262px;
+  width: 262px;
+  height: 280px;
   display: inline-block;
   cursor: pointer;
 }
@@ -71,14 +83,20 @@
 .card .content .name {
   font-size: small;
 }
-.card .date {
+.card .date span{
   display: flex;
   justify-content: flex-end;
   font-size: small;
+  margin-bottom: 10px;
 }
 
 .recommendations {
-  margin: 16px 16px 24px;
+  /* margin: 16px 16px 24px; */
+  margin-top: 16px;
+  margin-bottom: 24px;
+  margin-left: 80px;
+  margin-right: 50px;
+  padding: 1px 16px 16px;
 }
 
 .recommendations .heading span {

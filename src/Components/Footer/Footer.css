@@ -11,6 +11,7 @@
 .footerParentDiv .content .heading {
   font-size: 24px;
   font-weight: bolder;
+  margin-left: 10px;
 }
 
 .footerParentDiv .footer {
@@ -24,4 +25,6 @@
 
 .footerParentDiv .footer p {
   margin: 0;
+  margin-left: 20px;
+  margin-right: 8px;
 }

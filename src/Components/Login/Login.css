@@ -31,6 +31,8 @@
   }
   
   .loginParentDiv a {
+    color: black;
+    text-decoration: none;
     display: flex;
     justify-content: center;
     cursor: pointer;

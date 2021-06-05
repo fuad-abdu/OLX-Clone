@@ -107,18 +107,26 @@
 }
 
 .loginPage hr {
+  display: block;
   margin: 0;
   background-color: black;
   height: 2px;
 }
 
+#loginPage:hover > #hr {
+  display: none;
+}
+
 .loginPage a{
+  font-weight: 700;
+  color: black;
   text-decoration: none;
 }
 
 .sellMenu {
   position: relative;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .sellMenu .all {
@@ -157,8 +165,7 @@
 
 @media only screen and (max-width: 700px) {
   .placeSearch,
-  .productSearch,
-  .sellMenu {
+  .productSearch {
     display: none;
   }
 }

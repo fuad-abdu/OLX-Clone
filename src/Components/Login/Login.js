@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import Logo from '../../olx-logo.png';
-import { FirebaseContext } from '../../store/FirebaseContext';
+import { FirebaseContext } from '../../store/Context';
 import './Login.css';
 
 function Login() {
@@ -31,7 +32,7 @@ function Login() {
   return (
     <div>
       <div className="loginParentDiv">
-        <img width="200px" height="200px" src={Logo}></img>
+        <Link to="/" ><img width="200px" height="200px" src={Logo}></img></Link>
         <form onSubmit={handleSubmit}>
           <label htmlFor="fname">Email</label>
           <br />
@@ -60,7 +61,7 @@ function Login() {
           <br />
           <button>Login</button>
         </form>
-        <a>Signup</a>
+        <Link to="/signup" >Signup</Link>
       </div>
     </div>
   );
