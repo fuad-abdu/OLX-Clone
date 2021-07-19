@@ -55,7 +55,8 @@
 
 .productSearch .input input {
   border-color: transparent;
-  outline-color: transparent;
+  outline-color: aqua;
+  padding-left: 10px;
   width: 100%;
   align-items: center;
 }
@@ -118,6 +119,7 @@
 }
 
 .loginPage a{
+  cursor: pointer;
   font-weight: 700;
   color: black;
   text-decoration: none;

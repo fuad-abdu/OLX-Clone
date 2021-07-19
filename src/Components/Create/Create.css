@@ -1,32 +1,187 @@
-.centerDiv {
-    border: 1px solid black;
-    width: max-content;
-    padding: 50px;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 6px;
-  }
-  .input {
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    outline-color: transparent;
-  }
-  
-  .uploadBtn {
-    margin-top: 30px;
-    width: 100%;
-    height: 48px;
-    /* border-color: transparent; */
-    background-color: #002f34;
-    color: whitesmoke;
-    font-weight: 900;
-  }
-  .uploadBtn:hover {
-    background-color: white;
-    color: #002f34;
-    border: 2px solid #002f34;
-  }
-  
+header{
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+body{
+  font-family: "Roboto,Arial,Helvetica,sans-serif";
+}
+
+.create{
+    margin-top: 75px;
+}
+
+h2{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.create_parentDiv{
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    width: 850px;
+}
+
+/* .create_details{
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    width: 850px;
+} */
+
+.create_firtDiv h3{
+  padding: 20px 18px 20px;
+  font-size: 19px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.create_details{
+  padding: 10px 28px 20px;
+}
+
+.create_details h3{
+  font-size: 19px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.create_firtDiv p{
+    padding: 0px 18px 7px;
+    margin: 0;
+    color:grey;
+}
+
+.create_firtDiv a{
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+  text-decoration: underline;
+}
+
+.create_firtDiv a:hover{
+  text-decoration: none;
+}
+
+.create_path a {
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.field > label, .fields > label{
+  font-size: 14px;
+  display: flex;
+}
+
+.fields input{
+  border-radius: 5px;
+  outline: none;
+  border: solid 1px grey;
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+}
+
+.field{
+  margin-bottom: 25px;
+}
+
+.fields textarea{
+  padding-left: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: solid 1px grey;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.fields input:focus{
+  border: solid 4px lightseagreen;
+}
+
+.fields textarea:focus{
+  border: solid 4px lightseagreen;
+}
+
+/* #brand:focus > .fields label{
+  color: lightseagreen;
+} */
+
+.p{
+  display: flex;
+  justify-content: space-between;
+}
+
+.p p {
+  color: grey;
+  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 3px;
+}
+
+.foo{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: solid 1px grey;
+  outline: none;
+  padding-left: 10px;
+}
+
+.pictures{
+  display: flex;
+}
+
+.parent-picture{
+  margin: 5px;
+  height: auto;
+  border: solid 2px grey;
+  text-align: center;
+  cursor: pointer;
+  width: 105px;
+  height: 108px;
+}
+
+.parent-picture .add{
+  padding: 20px;
+}
+
+.parent-picture img{
+  width: 104px;
+  height: 104px;
+}
+
+.add-photo-btn{
+  margin: 0;
+}
+
+.parent-picture .fas{
+  color: grey;
+  font-size: 30px;
+}
+
+.pictures .active{
+  border-color: black;
+  color: black;
+}
+
+.post-btn button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 100px;
+  background: #002f34;
+  border-radius: 5px;
+  border: solid 3px #002f34;
+  color: white;
+  font-weight: bold;
+}
+
+.post-btn button:hover{
+  background: #fff;
+  color: #002f34;
+  /* border-color: ; */
+}

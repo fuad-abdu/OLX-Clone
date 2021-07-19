@@ -2,6 +2,10 @@ import React, { useContext, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Signup from './Pages/Signup'
 import Login from './Pages/Login'
+import Create from './Pages/Create'
+import View from './Pages/ViewPost'
+import Category from './Pages/Category'
+
 import './App.css';
 
 /**
@@ -9,11 +13,15 @@ import './App.css';
  */
 import Home from './Pages/Home';
 import { AuthContext, FirebaseContext } from './store/Context';
+import Post from './store/PostContext';
+import CategoryContext from './store/CategoryContext';
+import FilteredContext from './store/FilteredContext';
+import FilteredProducts from './Pages/FilteredProducts';
 
 function App() {
 
-  const {user, setUser} = useContext(AuthContext)
-  const {firebase} = useContext(FirebaseContext)
+  const { user, setUser } = useContext(AuthContext)
+  const { firebase } = useContext(FirebaseContext)
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((User) => {
@@ -24,17 +32,35 @@ function App() {
 
   return (
     <div>
-      <Router>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/signup">
-          <Signup />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-      </Router>
+      <Post>
+        <CategoryContext>
+          <FilteredContext>
+            <Router>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/signup">
+                <Signup />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/create">
+                <Category />
+              </Route>
+              <Route path="/post">
+                <Create />
+              </Route>
+              <Route path="/viewPost">
+                <View />
+              </Route>
+              <Route path="/filter">
+                <FilteredProducts/>
+              </Route>
+            </Router>
+          </FilteredContext>
+        </CategoryContext>
+      </Post>
     </div>
   );
 }

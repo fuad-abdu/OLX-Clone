@@ -1,0 +1,53 @@
+body{
+    font-family: Roboto,Arial,Helvetica,sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 65px;
+    background-color: rgb(248, 248, 248);
+    box-sizing: border-box;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.brandName{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.logo{
+    margin-left: 27px;
+}
+
+section{
+    margin-top: 75px;
+}
+
+h2{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.parentDiv{
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    width: 850px;
+    /* text-align: center; */
+}
+
+.firtDiv h3{
+    padding: 24px 30px 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.categories{
+    width: 100%;
+}
