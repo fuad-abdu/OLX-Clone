@@ -1,3 +1,29 @@
 body{
     /* padding-top: 20px; */
 }
+
+.products{
+    margin-bottom: 30px;
+}
+
+.products h3{
+    font-family: Arial,Helvetica,sans-serif;
+    margin: 30px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.products h5{
+    font-family: Arial,Helvetica,sans-serif;
+    margin-left: 30px;
+    margin-top: -15px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.products h5 span{
+    color: gray;
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 10px;
+}

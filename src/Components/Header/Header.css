@@ -24,6 +24,12 @@
   background-color: white;
 }
 
+.placeSearch label{
+  margin: auto;
+  margin-left: 10px;
+  color: grey;
+}
+
 .placeSearch ::selection {
   border-color: #23e5db;
   outline-color: #23e5db;

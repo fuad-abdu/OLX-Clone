@@ -13,13 +13,26 @@
 
 .bannerParentDiv .bannerChildDiv .menuBar .categoryMenu span {
   margin-right: 16px;
+  margin-left: 26px;
   font-weight: bolder;
+  font-size: 14px;
 }
 
 .bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions {
+  margin-left: 10px;
+}
+.bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions a{
+  text-decoration: none;
+  color: black;
 }
 .bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions span {
+  cursor: pointer;
   padding: 10px;
+  font-size: 14px;
+}
+
+.bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions span:hover {
+  color: cadetblue;
 }
 
 .bannerChildDiv .banner {

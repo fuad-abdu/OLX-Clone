@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import './Create.css';
 import LeftArrow from '../../assets/LeftArrow'
 import OlxLogo from '../../assets/OlxLogo'
@@ -21,6 +21,7 @@ const Create = () => {
   const [price, setPrice] = useState('');
   const [image, setImage] = useState([]);
 
+  const [NumberOfProducts, setNumberOfProducts] = useState()
 
   // const [imgUrl, setImgUrl] = useState([]);
   var URLS = [];
@@ -58,6 +59,16 @@ const Create = () => {
     })
   }
 
+  useEffect(() => {
+    firebase.firestore().collection('products').get().then((snapshot) => {
+        snapshot.docs.map((product, key) => {
+          return (
+            setNumberOfProducts(key+1)
+        )
+        })
+    })
+}, [])
+
   const handleSubmit = () => {
     uploadImage();
     setTimeout(()=>{
@@ -74,11 +85,14 @@ const Create = () => {
       category: category.category,
       price,
       url: URLS,
-      createdAt: date.toDateString()
+      createdAt: date.toDateString(),
+      no:NumberOfProducts? NumberOfProducts+1 : 1
   }).then(()=>{
     history.push('/')
   })
   }
+
+  console.log(NumberOfProducts);
 
   return (
     <Fragment>

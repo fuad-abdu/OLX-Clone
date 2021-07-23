@@ -14,6 +14,18 @@ function Login() {
   const [password, setPassword] = useState('');
 
   const { firebase } = useContext(FirebaseContext);
+  
+  const [Toggle, setToggle] = useState(true)
+  
+  const toggle = () => {
+    if(Toggle){
+      document.getElementById('password').type = "text";
+      setToggle(false)
+    }else{
+      document.getElementById('password').type = "password";
+      setToggle(true)
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -48,15 +60,21 @@ function Login() {
           <br />
           <label htmlFor="lname">Password</label>
           <br />
-          <input
-            className="input"
-            type="password"
-            id="lname"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            name="password"
-            defaultValue="Doe"
-          />
+          <div className="input_parent">
+            <input
+              className="input"
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              defaultValue="Doe"
+            />
+            <i 
+              class={`far ${Toggle?'fa-eye-slash' : 'fa-eye'}`}
+              onClick={toggle}
+            ></i>
+          </div>
           <br />
           <br />
           <button>Login</button>

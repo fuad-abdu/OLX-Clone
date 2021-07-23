@@ -1,3 +1,9 @@
+.productSearch form{
+    display: flex;
+    justify-content: space-between;
+    /* margin: auto; */
+}
+
 .visually-hidden {
     /* display: none; */
     clip: rect(0 0 0 0);
@@ -7,10 +13,6 @@
     position: absolute;
     white-space: nowrap;
     width: 1px;
-}
-
-label{
-    display: none;
 }
 
 button{

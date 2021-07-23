@@ -25,7 +25,8 @@ function Header() {
         </div>
         <div className="placeSearch">
           <Search></Search>
-          <input type="text" />
+          <label htmlFor="">India</label>
+          {/* <input type="text" /> */}
           <Arrow></Arrow>
         </div>
 
@@ -45,6 +46,7 @@ function Header() {
 
         {user && <span>Welcome {user.displayName}</span>}
 
+        {user?
         <Link to="/create">
           <div className="sellMenu">
             <SellButton></SellButton>
@@ -54,6 +56,16 @@ function Header() {
             </div>
           </div>
         </Link>
+        :
+        <Link to="/login">
+          <div className="sellMenu">
+            <SellButton></SellButton>
+            <div className="sellMenuContent">
+              <SellButtonPlus></SellButtonPlus>
+              <span>SELL</span>
+            </div>
+          </div>
+        </Link>}
       </div>
     </div>
   );

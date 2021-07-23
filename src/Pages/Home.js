@@ -8,6 +8,7 @@ import Banner from '../Components/Banner/Banner';
 import './Home.css';
 import Posts from '../Components/Posts/Posts';
 import Footer from '../Components/Home-Footer/Home-Footer';
+import QuickMenu from '../Components/Posts/QuickMenu';
 
 function Home(props) {
 
@@ -19,6 +20,7 @@ function Home(props) {
     <div className="homeParentDiv">
       <Header />
       <Banner />
+      <QuickMenu/>
       <Posts />
       <Footer />
       {/* <button onClick={()=>Example()}>click</button> */}

@@ -1,6 +1,6 @@
 .loginParentDiv {
     border: 1px solid black;
-    width: max-content;
+    width: 25rem;
     padding: 10px;
     position: absolute;
     top: 50%;
@@ -8,8 +8,18 @@
     transform: translate(-50%, -50%);
     border-radius: 6px;
   }
+
+  .input_parent {
+    display: flex;
+  }
   
+  .far{
+    border-bottom: 2px solid;
+    cursor: pointer;
+  }
+
   .loginParentDiv .input {
+    width: 100%;
     border-top-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
@@ -23,6 +33,7 @@
     background-color: #002f34;
     color: whitesmoke;
     font-weight: 900;
+    margin-bottom: 10px;
   }
   .loginParentDiv button:hover {
     background-color: white;
