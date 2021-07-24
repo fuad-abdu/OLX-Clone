@@ -10,7 +10,7 @@ import NumberFormat from 'react-number-format';
 
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/dist/sweetalert2.css'
-import Loading from './Loading';
+import Loading from '../Loading/Loading';
 
 
 const Create = () => {

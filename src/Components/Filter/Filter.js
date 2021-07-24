@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Heart from '../../assets/Heart';
 import { FirebaseContext } from '../../store/Context';
 import { Filter_Context } from '../../store/FilteredContext';
+import { PostContext } from '../../store/PostContext';
 import Banner from '../Banner/Banner';
 import Posts from '../Posts/Posts';
 
@@ -13,6 +14,7 @@ function Filter() {
 
     const { filterProducts } = useContext(Filter_Context);
     const { firebase } = useContext(FirebaseContext);
+    const { setPostDetails } = useContext(PostContext);
 
     // const [Params, setParams] = useState()
 
@@ -53,16 +55,16 @@ function Filter() {
     // })
 
     products.filter((product) => {
-        if(params.search === null){
+        if (params.search === null) {
             return null
-        }else if (product.title.toLowerCase().includes(params.search.toLowerCase())) {
+        } else if (product.title.toLowerCase().includes(params.search.toLowerCase())) {
             return product
-        }else if(product.category.toLowerCase().includes(params.search.toLowerCase())){
+        } else if (product.category.toLowerCase().includes(params.search.toLowerCase())) {
             return product
         }
     }).map((product) => {
         console.log(product.description);
-        arr = [...arr ,product]
+        arr = [...arr, product]
     })
 
     arr.map(post => {
@@ -89,7 +91,7 @@ function Filter() {
                                 <div
                                     className="card col-md-3"
                                     onClick={() => {
-                                        // setPostDetails(post)
+                                        setPostDetails(post)
                                         history.push('/viewPost')
                                     }}
                                 >

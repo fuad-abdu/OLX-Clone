@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/dist/sweetalert2.css'
+
 import Logo from '../../olx-logo.png';
 import { FirebaseContext } from '../../store/Context';
 import './Login.css';
@@ -32,12 +35,14 @@ function Login() {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         var user = userCredential.user;
+        Swal.fire('Done...', 'Login Success', 'success')
         history.push('/')
       })
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        alert(errorMessage)
+        Swal.fire('Oops...', `${errorMessage}`, 'error')
+        // alert(errorMessage)
       });
   }
 

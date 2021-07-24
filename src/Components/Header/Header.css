@@ -171,6 +171,150 @@
   margin-left: 5px;
 }
 
+.profile{
+  /* cursor: pointer; */
+  display: flex;
+  align-items: center;
+}
+
+.profile img{
+  border: 1px solid #02fff7;
+  width: 40px;
+  border-radius: 20px;
+}
+
+.dropdown:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 20px;
+  top: -4%;
+  border-width: 12px 12px 0px 12px;
+  border-style: solid;
+  border-color: white rgba(0, 0, 0, 0);
+  transform: rotate(180deg);
+    
+}
+
+.dropdown:after {
+    
+  margin-top: 10px;
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 89.6%;
+  top: -11%;
+  border-width: 0px 12px 12px 12px;
+  /* border-color: #5D7B80rgba(0, 0, 0, 0); */
+}
+
+.dropdown {
+  /* Size & position */
+  position: absolute;
+  font-size: larger;
+  top: 100%;
+  width: 288px;
+  right: 176px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  /* Styles */
+  background: #fff;
+  box-shadow: 0 0 6px 0 rgb(0 0 0 / 12%), 0 6px 6px 0 rgb(0 0 0 / 24%);
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  list-style: none;
+  z-index: 1;
+  /* Hiding */
+  opacity: 1;
+  pointer-events: none;
+}
+
+.click{
+  cursor: pointer;
+}
+
+.dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  margin-right: 0em;
+  text-align: left;
+}
+
+.dropdown .profile_profile{
+  cursor: default;
+  display: flex;
+  padding: 20px;
+}
+
+.profile .active{
+  display: block;
+}
+
+.profile .nonactive{
+  display: none;
+}
+
+.dropdown .profile_profile img{
+  width: 60px;
+  border-radius: 35px;
+}
+
+.dropdown .profile_profile .details{
+  margin-left: 10px;
+}
+
+.dropdown .profile_profile .details p{
+  font-size: 14px;
+  line-height: 25px;
+  color: rgba(0,47,52,.64);
+}
+
+.dropdown .profile_profile .details h4{
+  color: #002f34;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.dropdown hr{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dropdown .menus .menu{
+  cursor: pointer;
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  /* margin-bottom: 8px; */
+  /* border-bottom: 1px solid lightgray; */
+}
+
+.dropdown .menus .menu:hover{
+  background-color: #c8f8f6;
+}
+
+.dropdown .menus .menu i{
+  display: flex;
+  font-size: 25px;
+  margin-bottom: 5px;
+  color: #002f34;
+}
+
+.dropdown .menus .menu h5{
+  line-height: 38px;
+  font-size: 17px;
+  color: #002f34;
+  margin-top: 5px;
+}
 @media only screen and (max-width: 700px) {
   .placeSearch,
   .productSearch {

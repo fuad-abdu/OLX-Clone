@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import './Header.css';
 import OlxLogo from '../../assets/OlxLogo';
@@ -10,15 +10,45 @@ import { Link, useHistory } from 'react-router-dom';
 import { AuthContext, FirebaseContext } from '../../store/Context';
 import SearchBar from './SearchBar';
 
-function Header() {
+function Header(ref) {
 
   const { user } = useContext(AuthContext)
   const { firebase } = useContext(FirebaseContext)
 
   const history = useHistory();
 
+  const [state, setstate] = useState(false)
+
+  const HandleClick = () => {
+    if (state) {
+      setstate(false)
+    } else {
+      setstate(true)
+    }
+  }
+
+  const node = useRef();
+
+  useEffect(() => {
+    // add when mounted
+    document.addEventListener("mousedown", handleClick);
+    // return function to be called when unmounted
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
+
+  const handleClick = e => {
+    if (node.current.contains(e.target)) {
+      // inside click
+      return;
+    }
+    // outside click 
+    setstate(false);
+  };
+
   return (
-    <div className="headerParentDiv">
+    <div className="headerParentDiv" ref={node}>
       <div className="headerChildDiv">
         <div className="brandName">
           <Link to="/" ><OlxLogo></OlxLogo></Link>
@@ -36,36 +66,63 @@ function Header() {
           <span> ENGLISH </span>
           <Arrow></Arrow>
         </div>
-        <div className="loginPage" id="loginPage">
-          {user ? <a onClick={() => {
-            firebase.auth().signOut();
-            history.push('/login')
-          }}><span>LogOut</span></a> : <Link to="/login" ><span>Login</span></Link>}
+        {!user && <div className="loginPage" id="loginPage">
+          <Link to="/login" ><span>Login</span></Link>
           <hr id="hr" />
-        </div>
+        </div>}
 
-        {user && <span>Welcome {user.displayName}</span>}
-
-        {user?
-        <Link to="/create">
-          <div className="sellMenu">
-            <SellButton></SellButton>
-            <div className="sellMenuContent">
-              <SellButtonPlus></SellButtonPlus>
-              <span>SELL</span>
+        {user && <div className="profile">
+          <div className="click" onClick={HandleClick}>
+            <img src="../../Images/profile.png" alt="" />
+            <Arrow></Arrow>
+          </div>
+          <div class={`dropdown ${state ? 'active' : 'nonactive'}`} >
+            <div className="profile_profile">
+              <img src="../../Images/profile.png" alt="" />
+              <div className="details">
+                <p>Hello,</p>
+                <h4>{user?.displayName}</h4>
+              </div>
+            </div>
+            <hr />
+            <div className="menus">
+              <div className="menu">
+                <i class="fas fa-clipboard-list"></i>
+                <h5>My Ads</h5>
+              </div>
+              <div className="menu" onClick={() => {
+                firebase.auth().signOut();
+                history.push('/')
+              }}>
+                <i class="fas fa-sign-out-alt"></i>
+                <h5>Logout</h5>
+              </div>
             </div>
           </div>
-        </Link>
-        :
-        <Link to="/login">
-          <div className="sellMenu">
-            <SellButton></SellButton>
-            <div className="sellMenuContent">
-              <SellButtonPlus></SellButtonPlus>
-              <span>SELL</span>
+        </div>}
+
+        {/* {user && <span>Welcome {user.displayName}</span>} */}
+
+        {user ?
+          <Link to="/create">
+            <div className="sellMenu">
+              <SellButton></SellButton>
+              <div className="sellMenuContent">
+                <SellButtonPlus></SellButtonPlus>
+                <span>SELL</span>
+              </div>
             </div>
-          </div>
-        </Link>}
+          </Link>
+          :
+          <Link to="/login">
+            <div className="sellMenu">
+              <SellButton></SellButton>
+              <div className="sellMenuContent">
+                <SellButtonPlus></SellButtonPlus>
+                <span>SELL</span>
+              </div>
+            </div>
+          </Link>}
       </div>
     </div>
   );

@@ -6,6 +6,10 @@ import Logo from '../../olx-logo.png';
 import { FirebaseContext } from '../../store/Context';
 import './Signup.css';
 
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/dist/sweetalert2.css'
+import Loading from '../Loading/Loading';
+
 export default function Signup() {
 
   const history = useHistory();
@@ -14,6 +18,8 @@ export default function Signup() {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const [loading, setLoading] = useState(false);
 
   const { firebase } = useContext(FirebaseContext);
 
@@ -31,6 +37,7 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setLoading(true)
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         var user = userCredential.user;
@@ -42,13 +49,16 @@ export default function Signup() {
               phone: phone
             })
               .then(() => {
-                history.push('/login')
+                setLoading(false)
+                Swal.fire('Done...', 'Account Created', 'success')
+                history.push('/')
               })
           })
       })
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
+        Swal.fire('Oops...', `${errorMessage}`, 'error')
         console.log(errorMessage);
         // ..
       });
@@ -62,6 +72,7 @@ export default function Signup() {
           <label htmlFor="fname">Username</label>
           <br />
           <input
+            required
             className="input"
             type="text"
             id="fname"
@@ -74,6 +85,7 @@ export default function Signup() {
           <label htmlFor="fname">Email</label>
           <br />
           <input
+            required
             className="input"
             type="email"
             id="fname"
@@ -86,8 +98,9 @@ export default function Signup() {
           <label htmlFor="lname">Phone</label>
           <br />
           <input
+            required
             className="input"
-            type="number"
+            type="tel"
             id="lname"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
@@ -99,6 +112,7 @@ export default function Signup() {
           <br />
           <div className="input_parent">
             <input
+              required
               className="input"
               type="password"
               id="password"
@@ -118,6 +132,7 @@ export default function Signup() {
         </form>
         <Link to="/login" >Login</Link>
       </div>
+      {loading && <Loading/>}
     </div>
   );
 }
