@@ -101,8 +101,6 @@ function Header(ref) {
           </div>
         </div>}
 
-        {/* {user && <span>Welcome {user.displayName}</span>} */}
-
         {user ?
           <Link to="/create">
             <div className="sellMenu">
