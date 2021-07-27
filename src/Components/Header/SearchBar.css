@@ -33,16 +33,16 @@ button{
     /* border: 1px solid lightgray; */
 }
 
-.list{
+.productsLists .list{
     border-bottom: 1px solid lightgrey;
 }
 
-.list:hover{
+.productsLists .list:hover{
     background-color: lightgray;
     cursor: pointer;
 }
 
-.list p{
+.productsLists .list p{
     margin-left: 15px;
     font-size: 14px;
     cursor: pointer;

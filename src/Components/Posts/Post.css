@@ -43,6 +43,10 @@
   overflow-y: hidden;
 }
 
+.moreView .cards::-webkit-scrollbar{
+  display: none;
+}
+
 .card {
   margin-right: 15px;
   padding: 13px;
@@ -114,4 +118,40 @@
 
 p{
   margin-left: 0;
+}
+
+.moreView{
+  position: relative;
+}
+
+.buttons button{
+  width: 30px;
+  height: 65px;
+  background: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons .fas{
+  color: black;
+}
+
+.buttons #slideRight{
+  position: absolute;
+  top: 9.5em;
+  right: 12px;
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%);
+}
+
+.buttons #slideLeft{
+  position: absolute; 
+  top: 9.5em;
+  left: 12px; 
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%);
 }

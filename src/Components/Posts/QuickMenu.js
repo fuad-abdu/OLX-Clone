@@ -26,7 +26,9 @@ function QuickMenu() {
         })
     }, [])
 
-  const sortedActivities = products.slice().sort((a, b) => b.no - a.no)
+    var obj = [...new Map(products.map(item => [JSON.stringify(item.no), item])).values()];
+
+    const sortedActivities = obj.slice().sort((a, b) => b.no - a.no)
 
     return (
         <div className="moreView">
@@ -34,7 +36,7 @@ function QuickMenu() {
                 <span>Quick Menu</span>
                 <Link>View more</Link>
             </div>
-            <div className="cards">
+            <div className="cards" id="cards">
                 {sortedActivities.map(product => {
                     return (
                         <div
@@ -69,6 +71,24 @@ function QuickMenu() {
                         </div>
                     )
                 })}
+                <div className="buttons">
+                    <button 
+                    id="slideLeft" 
+                    type="button"
+                    onClick={()=>{
+                        document.getElementById('cards').scrollLeft -= 250;
+                    }}>
+                    <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button 
+                    id="slideRight" 
+                    type="button"
+                    onClick={()=>{
+                        document.getElementById('cards').scrollLeft += 250;
+                    }}>
+                    <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     )

@@ -18,7 +18,7 @@ function Posts() {
   const [products, setProducts] = useState([])
 
   
-  useEffect(() => {
+  useEffect(() => {    
     firebase.firestore().collection('products').get().then((snapshot) => {
       const allPost = snapshot.docs.map((product) => {
         return {
@@ -30,7 +30,9 @@ function Posts() {
     })
   }, [])
 
-  const sortedActivities = products.slice().sort((a, b) => b.no - a.no)
+  var obj = [...new Map(products.map(item => [JSON.stringify(item.no), item])).values()];
+
+  const sortedActivities = obj.slice().sort((a, b) => b.no - a.no)
 
   // sortedActivities.map(obj =>{
   //   console.log('sorted   >    = > '+obj.title);
