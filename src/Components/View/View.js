@@ -81,7 +81,7 @@ function View() {
         </div>
         {userDetails && <div className="contactDetails">
           <p>Seller details</p>
-          <img src="./images/profile.png" alt="" />
+          <img src="../../Images/profile.png" alt="" />
           <p className="userDetail1">{userDetails.username}</p>
           <p className="userDetail2">{userDetails.phone}</p>
         </div>}

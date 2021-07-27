@@ -87,7 +87,6 @@ function Filter() {
                     <div className="cards row mx-auto container">
                         {arr.map((post) => {
                             return (
-
                                 <div
                                     className="card col-md-3"
                                     onClick={() => {
@@ -118,8 +117,6 @@ function Filter() {
                                         <span>{post.createdAt}</span>
                                     </div>
                                 </div>
-
-
                             )
                         })}
                     </div>

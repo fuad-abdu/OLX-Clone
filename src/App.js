@@ -5,6 +5,7 @@ import Login from './Pages/Login'
 import Create from './Pages/Create'
 import View from './Pages/ViewPost'
 import Category from './Pages/Category'
+import MyAdsPage from './Pages/MyAds';
 
 import './App.css';
 
@@ -17,6 +18,7 @@ import Post from './store/PostContext';
 import CategoryContext from './store/CategoryContext';
 import FilteredContext from './store/FilteredContext';
 import FilteredProducts from './Pages/FilteredProducts';
+import ScrollToTop from './store/ScrollToTop';
 
 function App() {
 
@@ -36,27 +38,32 @@ function App() {
         <CategoryContext>
           <FilteredContext>
             <Router>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/signup">
-                <Signup />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path="/create">
-                <Category />
-              </Route>
-              <Route path="/post">
-                <Create />
-              </Route>
-              <Route path="/viewPost">
-                <View />
-              </Route>
-              <Route path="/filter">
-                <FilteredProducts/>
-              </Route>
+              <ScrollToTop>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/signup">
+                  <Signup />
+                </Route>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <Route path="/create">
+                  <Category />
+                </Route>
+                <Route path="/post">
+                  <Create />
+                </Route>
+                <Route path="/viewPost">
+                  <View />
+                </Route>
+                <Route path="/filter">
+                  <FilteredProducts />
+                </Route>
+                <Route path="/myads/:id">
+                  <MyAdsPage />
+                </Route>
+              </ScrollToTop>
             </Router>
           </FilteredContext>
         </CategoryContext>

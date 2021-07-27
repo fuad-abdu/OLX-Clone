@@ -73,7 +73,7 @@ function Header(ref) {
 
         {user && <div className="profile">
           <div className="click" onClick={HandleClick}>
-            <img src="../../Images/profile.png" alt="" />
+            <img src="../../Images/user.png" alt="" />
             <Arrow></Arrow>
           </div>
           <div class={`dropdown ${state ? 'active' : 'nonactive'}`} >
@@ -86,7 +86,9 @@ function Header(ref) {
             </div>
             <hr />
             <div className="menus">
-              <div className="menu">
+              <div className="menu" onClick={() => {
+                history.push(`/myads/${user.uid}`)
+              }}>
                 <i class="fas fa-clipboard-list"></i>
                 <h5>My Ads</h5>
               </div>

@@ -1,0 +1,43 @@
+.my_ads h5{
+    font-size: 17px;
+    font-weight: bold;
+    border-bottom: 4px solid black;
+}
+
+.no_ads img{
+    width: 200px;
+}
+
+.no_ads button{
+    color: #002f34;
+    width: auto;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 4px;
+    border: 2px solid #002f34;
+    padding: 10px 10px;
+    outline: none;
+    margin: 15px;
+}
+
+.no_ads button:hover{
+    padding: 8px 8px;
+    border: 4px solid #002f34;
+}
+
+.no_ads h6{
+    margin: 15px 0 16px;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0,47,52,.64);
+    font-weight: 700;
+}
+
+.no_ads p{
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    /* width: 60%; */
+    color: rgba(0,47,52,.36);               
+}
