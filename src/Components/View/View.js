@@ -25,7 +25,7 @@ function View() {
 
   return (
     <div className="viewParentDiv container-fluid row">
-      <div className="imageShowDiv mt-5 col-md-8">
+      <div className="imageShowDiv mt-5 col-md-8 col-12">
         {/* <img
           src={postDetails.url}
           alt=""

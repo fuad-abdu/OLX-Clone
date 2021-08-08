@@ -1,3 +1,45 @@
-.homeParentDiv{
-    ;
+.homeParentDiv .topBtn{
+    position: fixed;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    /* display: none; */
+}
+
+.homeParentDiv .topBtn button{
+    align-items: center;
+    background-color: #fff;
+    color: #002f34;
+    border: none;
+    padding: 10px;
+    width: 180px;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.homeParentDiv .topBtn button span .fas{
+    color: #002f34;
+    /* height: 10px; */
+}
+
+.nonactive{
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+
+@media only screen and (max-width: 790px) {
+    .homeParentDiv .topBtn{
+        position: fixed;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+    }
 }

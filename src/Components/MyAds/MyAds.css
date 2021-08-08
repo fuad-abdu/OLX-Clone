@@ -41,3 +41,73 @@
     /* width: 60%; */
     color: rgba(0,47,52,.36);               
 }
+
+
+
+/* .ads_child {
+    margin-right: 15px;
+    padding: 13px;
+    max-width: 262px;
+    width: 262px;
+    height: 280px;
+    cursor: pointer;
+  }
+  
+  .ads_child .favorite {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .ads_child .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ads_child .image img {
+    height: 100px;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    text-align: center;
+  }
+  .ads_child .content .rate {
+    margin-top: 20px;
+    font-size: larger;
+    font-weight: bold;
+    color: #002f34;
+  }
+  .ads_child .content .kilometer {
+    font-size: medium;
+  }
+  .ads_child .content .name {
+    font-size: medium;
+    margin-top: 3px;
+    color: rgba(0,47,52,.64);
+  }
+  .ads_child .date span{
+    display: flex;
+    justify-content: flex-end;
+    font-size: small;
+    margin-bottom: 10px;
+    color: gray;
+  } 
+
+  .ads_child {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+  .cards {
+    display: flex;
+  }
+  */

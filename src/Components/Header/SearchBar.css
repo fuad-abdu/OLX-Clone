@@ -47,3 +47,43 @@ button{
     font-size: 14px;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 790px) {
+    .productsLists{
+        top: 128px;
+        left: 10px;
+        width: 92vw;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .productsLists{
+        top: 65px;
+        left: 308px;
+        width: 14em;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .productsLists{
+        top: 65px;
+        left: 285px;
+        width: 25em;
+    }
+}
+
+@media only screen and (max-width: 988px) {
+    .productsLists{
+        top: 65px;
+        left: 305px;
+        width: 13em;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .productsLists{
+        top: 128px;
+        left: 10px;
+        width: 96%;
+    }
+}

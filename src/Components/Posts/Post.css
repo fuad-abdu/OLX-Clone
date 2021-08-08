@@ -155,3 +155,10 @@ p{
   left: 12px; 
   box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%);
 }
+
+@media only screen and (max-width: 770px) {
+  .moreView {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}

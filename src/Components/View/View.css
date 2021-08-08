@@ -1,5 +1,5 @@
 .viewParentDiv {
-  padding-top: 4em;
+  padding-top: 6em;
   display: flex;
 }
 .viewParentDiv .imageShowDiv {
@@ -145,4 +145,10 @@
 
 .border p span {
   margin-left: 60px;
+}
+
+@media only screen and (max-width: 790px) {
+  .viewParentDiv .rightSection{
+    width: 100%;
+  }
 }

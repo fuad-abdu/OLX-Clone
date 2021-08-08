@@ -67,9 +67,7 @@ function Filter() {
         arr = [...arr, product]
     })
 
-    arr.map(post => {
-        console.log(post);
-    })
+    arr = [...new Map(arr.map(item => [JSON.stringify(item.title), item])).values()];
 
     return (
         <div>

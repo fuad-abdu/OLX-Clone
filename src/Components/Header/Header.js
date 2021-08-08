@@ -18,6 +18,7 @@ function Header(ref) {
   const history = useHistory();
 
   const [state, setstate] = useState(false)
+  const [ScreenSize, setScreenSize] = useState()
 
   const HandleClick = () => {
     if (state) {
@@ -60,7 +61,7 @@ function Header(ref) {
           <Arrow></Arrow>
         </div>
 
-        <SearchBar />
+        <div className="search1"><SearchBar /></div>
 
         <div className="language">
           <span> ENGLISH </span>
@@ -124,6 +125,7 @@ function Header(ref) {
             </div>
           </Link>}
       </div>
+      <div className="search2"><SearchBar /></div>
     </div>
   );
 }

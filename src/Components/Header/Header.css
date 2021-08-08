@@ -2,7 +2,7 @@
   padding: 10px;
   background-color: whitesmoke;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   z-index: 999;
 }
 
@@ -111,6 +111,11 @@
   text-overflow: ellipsis;
   font-weight: bolder;
   margin-right: 5px;
+}
+
+.loginPage{
+  text-align: center;
+  width: 4em;
 }
 
 .loginPage hr {
@@ -237,6 +242,7 @@
 }
 
 .click{
+  width: 4em;
   cursor: pointer;
 }
 
@@ -314,9 +320,57 @@
   color: #002f34;
   margin-top: 5px;
 }
-@media only screen and (max-width: 700px) {
-  .placeSearch,
-  .productSearch {
+
+.search2{
+  display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+  .productSearch{
+    width: 30em;
+  }
+  .placeSearch{
+    width: 10em;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .productSearch{
+    width: 97%;
+  }
+  .headerChildDiv .brandName{
+    margin-left: 0px;
+  }
+  .dropdown{
+    top: 100%;
+    right: 175px;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+    .dropdown{
+      top: 55%;
+      right: 30%;
+    }
+  .productSearch{
+    margin-top: 10px;
+  }
+  .language{
     display: none;
+  }
+  .headerChildDiv .brandName{
+    width: 10%;
+  }
+  .click{
+    margin-left: 50px;
+  }
+  .productSearch{
+    width: 100%;
+  }
+  .placeSearch, .search1{
+    display: none;
+  }
+  .search2{
+    display: block;
   }
 }

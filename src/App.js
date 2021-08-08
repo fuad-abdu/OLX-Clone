@@ -1,5 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/dist/sweetalert2.css'
 import Signup from './Pages/Signup'
 import Login from './Pages/Login'
 import Create from './Pages/Create'
@@ -25,6 +27,8 @@ function App() {
   const { user, setUser } = useContext(AuthContext)
   const { firebase } = useContext(FirebaseContext)
 
+  const [OffLine, setOffLine] = useState(false)
+
   useEffect(() => {
     firebase.auth().onAuthStateChanged((User) => {
       setUser(User)
@@ -32,8 +36,16 @@ function App() {
     })
   }, [])
 
+  window.addEventListener("offline", ()=>{
+    // setOffLine(true);
+    Swal.fire('Oops...', 'Please Check Your Internet', 'error')
+  })
+  window.addEventListener("online", ()=>{
+    // setOffLine(false);
+  })
+
   return (
-    <div>
+    <div className={OffLine && 'offline'}>
       <Post>
         <CategoryContext>
           <FilteredContext>

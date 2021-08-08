@@ -76,7 +76,7 @@ function QuickMenu() {
                     id="slideLeft" 
                     type="button"
                     onClick={()=>{
-                        document.getElementById('cards').scrollLeft -= 250;
+                        document.getElementById('cards').scrollLeft -= 300;
                     }}>
                     <i class="fas fa-chevron-left"></i>
                     </button>
@@ -84,7 +84,7 @@ function QuickMenu() {
                     id="slideRight" 
                     type="button"
                     onClick={()=>{
-                        document.getElementById('cards').scrollLeft += 250;
+                        document.getElementById('cards').scrollLeft += 300;
                     }}>
                     <i class="fas fa-chevron-right"></i>
                     </button>

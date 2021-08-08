@@ -23,20 +23,21 @@ function MyAds() {
                     id: product.id
                 }
             })
-            setProducts(allPost)
+            setProducts([...new Map(allPost.map(item => [JSON.stringify(item.no), item])).values()])
         })
     }, [])
+
 
     const history = useHistory();
 
     return (
         <div className="my_ads container mt-5 mb-5">
-            <h5 className="container">ADS</h5>
-            <div className="ads row mx-auto">
+            <h5 className="">ADS</h5>
+            <div className="cards row">
                 {Products.length ? Products.map(product => {
                     return (
                         <div
-                            className="card col-md-3 mb-3"
+                            className="card mx-auto col-lg-3 mb-3"
                             onClick={() => {
                                 setPostDetails(product)
                                 history.push('/viewPost')

@@ -48,7 +48,7 @@ function Posts() {
           {sortedActivities.map(product => {
             return (
               <div 
-                className="card col-md-3"
+                className="card col-lg-3 col-sm-6 col-12 mx-auto"
                 onClick={() => {
                   setPostDetails(product)
                   history.push('/viewPost')

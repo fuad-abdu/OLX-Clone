@@ -1,11 +1,12 @@
 .loginParentDiv {
-    border: 1px solid black;
+    border: 1px solid lightgrey;
     width: 25rem;
     padding: 10px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%);
     border-radius: 6px;
   }
 
@@ -49,3 +50,9 @@
     cursor: pointer;
   }
   
+
+  @media only screen and (max-width: 490px) {
+    .loginParentDiv {
+      width: 16rem;
+    }
+  }
