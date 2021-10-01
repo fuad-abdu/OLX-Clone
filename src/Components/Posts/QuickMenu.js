@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from 'react'
 import NumberFormat from 'react-number-format'
 import { Link, useHistory } from 'react-router-dom'
 import Heart from '../../assets/Heart'
-import { FirebaseContext } from '../../store/Context';
+import { AuthContext, FirebaseContext } from '../../store/Context';
 import { PostContext } from '../../store/PostContext';
 
 function QuickMenu() {
 
     const history = useHistory();
 
+    const { user } = useContext(AuthContext);
     const { firebase } = useContext(FirebaseContext);
     const { setPostDetails } = useContext(PostContext);
 
@@ -42,8 +43,12 @@ function QuickMenu() {
                         <div
                             className="card"
                             onClick={() => {
-                                setPostDetails(product)
-                                history.push('/viewPost')
+                                if(user){
+                                    setPostDetails(product)
+                                    history.push('/viewPost')
+                                }else{
+                                    history.push('/login')
+                                }
                             }}
                         >
                             <div className="favorite">

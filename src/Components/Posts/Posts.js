@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import Heart from '../../assets/Heart';
 import NumberFormat from 'react-number-format';
 
-import { FirebaseContext } from '../../store/Context';
+import { AuthContext, FirebaseContext } from '../../store/Context';
 import { PostContext } from '../../store/PostContext';
 import './Post.css';
 
@@ -12,6 +12,7 @@ function Posts() {
 
   const history = useHistory();
 
+  const { user } = useContext(AuthContext);
   const { firebase } = useContext(FirebaseContext);
   const { setPostDetails } = useContext(PostContext);
 
@@ -50,8 +51,12 @@ function Posts() {
               <div 
                 className="card col-lg-3 col-sm-6 col-12 mx-auto"
                 onClick={() => {
-                  setPostDetails(product)
-                  history.push('/viewPost')
+                  if(user){
+                    setPostDetails(product)
+                    history.push('/viewPost')
+                  }else{
+                    history.push('/login')
+                  }
                 }}
               >
                 <div className="favorite">
